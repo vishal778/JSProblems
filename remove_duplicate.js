@@ -1,3 +1,4 @@
+//by includes
 var a = ["Rice","Rice","Rice","Wheat","Flour","Wheat","Milk"];
 var b=[];
 
@@ -9,6 +10,7 @@ for(let i=0;i<a.length;i++){
 }
 console.log(b)
 
+//by indexof
 var c=[]
 
 for(let i=0;i<a.length;i++){
@@ -19,9 +21,4 @@ for(let i=0;i<a.length;i++){
 
 console.log(c);
 
-var d="hello my name";
-console.log(d.split(" "));
 
-var test=["lion","tiger","cat"]
-test.splice(2,1,"dog")
-console.log(test)
