@@ -21,4 +21,36 @@ for(let i=0;i<a.length;i++){
 
 console.log(c);
 
+//Hashmap
+var d=new Map();
+var result=[];
+
+for(let i=0;i<a.length;i++){
+    if(d[a[i]]){
+        d[a[i]]++;
+    }else{
+        d[a[i]]=1;
+    }
+}
+console.log(d);
+for(let key in d){
+    result.push(key);
+}
+
+console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
