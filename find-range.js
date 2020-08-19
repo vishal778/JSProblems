@@ -67,6 +67,22 @@ while(i<startsort.length){
 
 console.log(result);
 
+var date = new Date();
+console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+console.log(date.toISOString().slice(0,10));
+console.log(date.toISOString().slice(0,10));
+
+var date1=new Date(new Date(new Date()-3600*1000*3).toISOString());
+console.log(date1.toISOString());
+
+
+d = new Date();
+utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+nd = new Date(utc + (3600000*+5.5));
+var ist =  nd.toLocaleString();
+console.log("IST now is : " +ist);
+
+
 
 
 
