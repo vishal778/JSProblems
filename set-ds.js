@@ -10,7 +10,9 @@ class myset{
     }
     
     addArray(item){
-        this.store.push(item);
+        item.forEach((value)=>{
+            this.add(value)
+        })
     }
     
     print(){
@@ -23,7 +25,11 @@ set.add(3);
 set.add(4);
 set.add(3);
 set.addArray([2,3,4])
+set.add({1:1,2:2,3:3})
+set.add({1:1,2:2,3:3})
 console.log(set.print());
+
+
 
 
 
