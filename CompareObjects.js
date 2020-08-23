@@ -6,7 +6,7 @@ function ComapreObjects(obj,obj1) {
             if(obj1[key]===obj[key]){
                 flag=true
             }else{
-                flag=false // if value of the key in first object doesn't matched                   with the vale of that same key in second object;
+                flag=false // if value of the key in first object doesn't matched with the vale of that same key in second object;
                 break;  
             }
         }else{
