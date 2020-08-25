@@ -28,7 +28,9 @@ function CompareArray(arr,arr1){
             }
         }else if(isObject(arr[i],arr1[i])){
             let res=CompareObject(arr[i],arr1[i])
-            return res;
+            if(res===false){
+                return false
+            }
         }else{
             if(arr[i] === arr1[i]){
                 flag=true;
@@ -44,6 +46,9 @@ function CompareArray(arr,arr1){
 //if value is object
 function CompareObject(obj,obj1){
     var flag=true;
+    if(Object.keys(obj).length != Object.keys(obj1).length){
+        return false;
+    }
     for(let key in obj){
         if(obj1[key] && isObject(obj[key],obj1[key])){
             let res=CompareObject(obj[key],obj1[key])  //recursive calling
@@ -52,9 +57,12 @@ function CompareObject(obj,obj1){
             }
         }else if(obj1[key] && isArray(obj[key],obj1[key])){
             let res=CompareArray(obj[key],obj1[key])
+            if(res===false){
             return res;
+            }
         }
         else{
+            //console.log("In else--",obj[key],"--",obj1[key]);
             if(obj[key]===obj1[key]){
                 flag=true;
             }else{
@@ -75,7 +83,7 @@ var obj={
         Type:"Alto",
         Type1:"Dzire"
     },
-    arraytest:[1,[1,2,3],{1:2,3:4},2,3]
+    arraytest:[1,[1,[1,2],2,3],{1:2,3:4},2,3]
 }
 
 var obj1={
@@ -87,7 +95,7 @@ var obj1={
         Type:"Alto",
         Type1:"Dzire"
     },
-    arraytest:[1,[1,2,3],{1:2,3:4},2,3]
+    arraytest:[1,[1,[1,2],2,3],{1:2,3:4},2,3]
 }
 var result=CompareObject(obj,obj1);
 console.log(result);
